@@ -4,7 +4,7 @@ import ContactCard from './ContactCard';
 
 const ContactList = ({ contacts }) => {
   return (
-    <div>
+    <div className="space-y-4 bg-amber-600 p-4 sketch-border">
       {contacts.map(contact => (
         <ContactCard key={contact.id} contact={contact} />
       ))}

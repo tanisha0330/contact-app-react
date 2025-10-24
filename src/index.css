@@ -1,28 +1,25 @@
-/* src/index.css */
 
-/*
-* This is the absolute first line of functional CSS.
-* Google Fonts @import MUST be at the very top.
-*/
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 /* Tailwind CSS v4 directives */
 @import "tailwindcss";
 
+/*defining custom colors*/
+:root {
+  --color-primary:#FF7043; 
+  --dark-text: #333333;
+  --light-bg: #dcd39c; 
+  --border-color: #4A4A4A;}
 
-/* After all @import directives, then define your custom global styles */
 body {
   font-family: 'Architects Daughter', cursive;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0; /* Good practice for body */
-  line-height: 1.5; /* Good practice for body */
+  -moz-osx-smoothing: grayscale;
 }
-
-/* Any custom base styles or utility overrides */
 .sketch-border {
-  border: 2px solid #333;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px 0px var(--border-color);
 }
-
-/* Add any other custom CSS after this */

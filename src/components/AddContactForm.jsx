@@ -6,41 +6,39 @@ const AddContactForm = ({ onAddContact }) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [photo, setPhoto] = useState('');
-  const [showForm, setShowForm] = useState(false); // State to toggle form visibility
+  const [showForm, setShowForm] = useState(false);
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the page from reloading
+    event.preventDefault();
     if (!name || !email || !phone) {
       alert("Please fill in Name, Email, and Phone fields.");
       return;
     }
-    onAddContact({ name, email, phone, photo }); // Pass all new contact details
-    // Clear the form fields after submission
+    onAddContact({ name, email, phone, photo });
     setName('');
     setEmail('');
     setPhone('');
     setPhoto('');
-    setShowForm(false); // Hide form after submission
+    setShowForm(false);
   };
 
   return (
-    <div className="mb-4 p-4 border border-blue-200 bg-blue-50 rounded-lg">
+    <div className="mb-4">
       <button
         onClick={() => setShowForm(!showForm)}
-        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-200"
+        className="w-full bg-[var(--primary-orange)] text-black py-2 px-4 sketch-border hover:bg-orange-600 transition-colors"
       >
-        {showForm ? 'Hide Form' : 'Add New Contact'}
+        {showForm ? 'Cancel' : 'Add New Contact'}
       </button>
 
-      {showForm && ( // Conditionally render the form
-        <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-          <h3 className="text-lg font-semibold text-gray-700">Add Contact Details</h3>
+      {showForm && (
+        <form onSubmit={handleSubmit} className="mt-4 space-y-3 p-4 sketch-border bg-gray-50">
           <input
             type="text"
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full p-2 sketch-border focus:outline-none focus:ring-2 focus:ring-[var(--primary-orange)]"
             required
           />
           <input
@@ -48,27 +46,27 @@ const AddContactForm = ({ onAddContact }) => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full p-2 sketch-border focus:outline-none focus:ring-2 focus:ring-[var(--primary-orange)]"
             required
           />
           <input
             type="tel"
-            placeholder="Phone (e.g., 123-456-7890)"
+            placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full p-2 sketch-border focus:outline-none focus:ring-2 focus:ring-[var(--primary-orange)]"
             required
           />
           <input
-            type="url" // Use type="url" for better validation for image URLs
+            type="url"
             placeholder="Photo URL (optional)"
             value={photo}
             onChange={(e) => setPhoto(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full p-2 sketch-border focus:outline-none focus:ring-2 focus:ring-[var(--primary-orange)]"
           />
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200"
+            className="w-full bg-green-500 text-white py-2 px-4 sketch-border hover:bg-green-600 transition-colors"
           >
             Save Contact
           </button>
