@@ -27,7 +27,7 @@ This project is built using modern frontend technologies:
 ***
 
 ### 🚀 Have a look :
-(contact-app-react-whjo-iik56zni5.vercel.app)
+[Visit](contact-app-react-whjo-iik56zni5.vercel.app)
 
 
 
